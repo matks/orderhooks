@@ -61,6 +61,21 @@ class OrderHooks extends Module
                 'btn-primary', ['href' => '/a/b'], 'Export to my ERP'
             )
         );
+
+        if (rand(1, 2) === 1) {
+
+            $bar->addButton(
+                new \PrestaShopBundle\Controller\Admin\Sell\Order\ActionsBarButton(
+                    'btn-secondary', ['href' => '/a/b'], 'Do something else'
+                )
+            );
+            $bar->addButton(
+                new \PrestaShopBundle\Controller\Admin\Sell\Order\ActionsBarButton(
+                    'btn-action', ['href' => '/a/b'],
+                    '<i class="material-icons form-error-icon">more_horiz</i> More'
+                )
+            );
+        }
     }
 
     public function hookDisplayAdminOrderTop(array $params)
