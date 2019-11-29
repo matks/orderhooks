@@ -50,13 +50,13 @@ class OrderHooks extends Module
         /** @var \PrestaShopBundle\Controller\Admin\Sell\Order\ActionsBarButtonsCollection $bar */
         $bar = $params['actions_bar_buttons_collection'];
 
-        $bar->addButton(
+        $bar->add(
             new \PrestaShopBundle\Controller\Admin\Sell\Order\ActionsBarButton(
                 'btn-warning', ['href' => '/a/b'], 'Link button'
             )
         );
 
-        $bar->addButton(
+        $bar->add(
             new \PrestaShopBundle\Controller\Admin\Sell\Order\ActionsBarButton(
                 'btn-primary', ['href' => '/a/b'], 'Export to my ERP'
             )
@@ -64,12 +64,12 @@ class OrderHooks extends Module
 
         if (rand(1, 2) === 1) {
 
-            $bar->addButton(
+            $bar->add(
                 new \PrestaShopBundle\Controller\Admin\Sell\Order\ActionsBarButton(
                     'btn-secondary', ['href' => '/a/b'], 'Do something else'
                 )
             );
-            $bar->addButton(
+            $bar->add(
                 new \PrestaShopBundle\Controller\Admin\Sell\Order\ActionsBarButton(
                     'btn-action', ['href' => '/a/b'],
                     '<i class="material-icons form-error-icon">more_horiz</i> More'
