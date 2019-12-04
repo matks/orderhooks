@@ -24,15 +24,16 @@ class OrderHooks extends Module
             $this->registerHook('displayBackOfficeOrderActions') &&
 
             $this->registerHook('displayAdminOrderContentOrder') &&
-            $this->registerHook('displayAdminOrderTabOrder') &&
+            $this->registerHook('displayAdminOrderTabContent') &&
 
-            $this->registerHook('displayAdminOrderTabShip') &&
-            $this->registerHook('displayAdminOrderContentShip') &&
+            $this->registerHook('displayAdminOrderTabLink') &&
 
-            $this->registerHook('displayAdminOrderRight') &&
-            $this->registerHook('displayAdminOrderLeft') &&
+            $this->registerHook('displayAdminOrderMain') &&
+            $this->registerHook('displayAdminOrderSide') &&
+
             $this->registerHook('displayAdminOrder') &&
             $this->registerHook('displayAdminOrderTop') &&
+
             $this->registerHook('actionGetBackOfficeOrderButtons');
     }
 
@@ -97,7 +98,7 @@ class OrderHooks extends Module
         return $this->context->smarty->fetch($this->getLocalPath() . 'views/templates/displayAdminOrder.tpl');
     }
 
-    public function hookDisplayAdminOrderLeft(array $params)
+    public function hookDisplayAdminOrderMain(array $params)
     {
         $this->context->smarty->assign([
             'order_id' => $params['id_order'],
@@ -106,7 +107,7 @@ class OrderHooks extends Module
         return $this->context->smarty->fetch($this->getLocalPath() . 'views/templates/displayAdminOrderLeft.tpl');
     }
 
-    public function hookDisplayAdminOrderRight(array $params)
+    public function hookDisplayAdminOrderSide(array $params)
     {
         $this->context->smarty->assign([
             'order_id' => $params['id_order'],
@@ -115,23 +116,13 @@ class OrderHooks extends Module
         return $this->context->smarty->fetch($this->getLocalPath() . 'views/templates/displayAdminOrderRight.tpl');
     }
 
-    public function hookDisplayAdminOrderTabShip(array $params)
+    public function hookDisplayAdminOrderTabLink(array $params)
     {
-        return $this->context->smarty->fetch($this->getLocalPath() . 'views/templates/displayAdminOrderTabShip.tpl');
+        return $this->context->smarty->fetch($this->getLocalPath() . 'views/templates/displayAdminOrderTabLink.tpl');
     }
 
-    public function hookDisplayAdminOrderContentShip(array $params)
+    public function hookDisplayAdminOrderTabContent(array $params)
     {
-        return $this->context->smarty->fetch($this->getLocalPath() . 'views/templates/displayAdminOrderContentShip.tpl');
-    }
-
-    public function hookDisplayAdminOrderTabOrder(array $params)
-    {
-        return $this->context->smarty->fetch($this->getLocalPath() . 'views/templates/displayAdminOrderTabOrder.tpl');
-    }
-
-    public function hookDisplayAdminOrderContentOrder(array $params)
-    {
-        return $this->context->smarty->fetch($this->getLocalPath() . 'views/templates/displayAdminOrderContentOrder.tpl');
+        return $this->context->smarty->fetch($this->getLocalPath() . 'views/templates/displayAdminOrderTabContent.tpl');
     }
 }
