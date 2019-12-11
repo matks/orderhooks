@@ -1,4 +1,5 @@
-<div class="tab-pane fade show active" id="displayAdminOrderTabContent" role="tabpanel" aria-labelledby="displayAdminOrderTabOrder">
+<!-- Do not preset the active or show class, no module can assume it will be the first displayed or activated, the core already activates the first tab -->
+<div class="tab-pane fade" id="displayAdminOrderTabContent" role="tabpanel" aria-labelledby="displayAdminOrderTabOrder">
   <p style="background-color: #71edd2; color: white;" class="mb-0 p-2">
     displayAdminOrderTabContent content
   </p>

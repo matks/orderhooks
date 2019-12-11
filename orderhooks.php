@@ -34,7 +34,7 @@ class OrderHooks extends Module
             $this->registerHook('displayAdminOrder') &&
             $this->registerHook('displayAdminOrderTop') &&
 
-            $this->registerHook('actionGetBackOfficeOrderButtons');
+            $this->registerHook('actionGetAdminOrderButtons');
     }
 
     public function hookDisplayBackOfficeOrderActions(array $params)
@@ -46,7 +46,7 @@ class OrderHooks extends Module
         return $this->context->smarty->fetch($this->getLocalPath() . 'views/templates/displayBackOfficeOrderActions.tpl');
     }
 
-    public function hookActionGetBackOfficeOrderButtons(array $params)
+    public function hookActionGetAdminOrderButtons(array $params)
     {
         /** @var \PrestaShopBundle\Controller\Admin\Sell\Order\ActionsBarButtonsCollection $bar */
         $bar = $params['actions_bar_buttons_collection'];
